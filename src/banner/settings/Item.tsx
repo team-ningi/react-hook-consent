@@ -8,6 +8,7 @@ type ConsentBannerSettingsItemProps = {
     id: ConsentOptionsService['id'];
     name: ConsentOptionsService['name'];
     description?: ConsentOptionsService['description'];
+    descriptions?: ConsentOptionsService['descriptions'];
     mandatory?: ConsentOptionsService['mandatory'];
 };
 
@@ -16,6 +17,7 @@ export function ConsentBannerSettingsItem({
     id,
     name,
     description,
+    descriptions,
     mandatory,
 }: ConsentBannerSettingsItemProps) {
     const { consent } = useConsent();
@@ -36,6 +38,13 @@ export function ConsentBannerSettingsItem({
                 <Toggle id={id} defaultChecked={consent.includes(id)} onChange={handleChange} disabled={mandatory} />
             </div>
             {description && <p className="rhc-settings__content__main__item__description">{description}</p>}
+            {descriptions && (
+                <ul className="rhc-settings__content__main__item__description">
+                    {descriptions.map((desc, index) => (
+                        <li key={index}>{desc}</li>
+                    ))}
+                </ul>
+            )}
         </div>
     );
 }

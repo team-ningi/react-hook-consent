@@ -9,6 +9,7 @@ export type ConsentOptionsService = {
     id: string;
     name: string;
     description?: string;
+    descriptions?: Array<string>;
     scripts?: Array<ScriptExternal | ScriptCode>;
     cookies?: Array<Cookie>;
     localStorage?: Array<string>;
