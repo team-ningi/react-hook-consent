@@ -3,7 +3,7 @@
         "registry": "https://npm.pkg.github.com"
     },
     "name": "@team-ningi/react-hook-consent",
-    "version": "4.0.0",
+    "version": "4.0.1",
     "description": "React consent management solution and banner for cookies and (external) scripts.",
     "scripts": {
         "build": "node esbuild.config.mjs production",
